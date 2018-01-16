@@ -1,0 +1,50 @@
+SOLID Anotações.
+
+Coesão ou SRP:
+	- Melhor manutenção;
+	- Menos suscetível a bugs;
+	- Maior reuso;
+	- Melhora em testes automarizados;
+	
+	- As classes precisam ter uma única responsabilidade;
+	- Se uma classe possui apenas uma responsabilidade, então um dia ela deve parar de crescer;
+	- Criação de interfaces e classes abstratas facilitam a coesão (Identificar características em comum entre classes);
+	- Encapsulamento.
+	
+Acoplamento:
+	- Problema de propagação de mudanças, se uma classe para de funcionar, as outras acopladas a ela também pararão;
+	- Acoplamento não é um problema quando a classe a ser acoplada é bastante estável (tende a não mudar);
+	- Acoplamento sempre dever ser feito a uma classe mais estável do que a sua;
+	- Acoplamento eferente: Uma classe depende de várias outras;
+	- Acoplamento aferente: Quem depende desta classe;
+	
+	- Criação de interfaces melhoram a estabilidade de classes;
+	- Quando uma mudança é feita na interface, ela precisa ser propagada para todas que implementem ela;
+	- Design Pattern: Observer.
+	
+Classes abertas ou OCP:
+	- Classes abertas para extensão mas fechada para alteração;
+	- Aberta de forma que seja possível mudar a execução dela ao longo do tempo;
+	- Fechada de forma que não seja necessário fazer alterações o tempo todo;
+	
+	- Abstrações, como interfaces, ajudam a deixar o código aberto;
+	- Exemplo: Em uma classe que usa os correis como serviço de entrega, seria melhor se ela usasse uma interface
+"ServiçoDeEntrega", então qualquer serviço poderia ser passado, desde que implemente essa interface.
+
+Encapsulamento:
+	- Encapsular é esconder o conportamento de uma classe dentro da mesma;
+	- Ajuda na manutenção e no entendimento em casos de códigos legado;
+	- Ficar atento para o comportamento de blocos de código;
+	
+	- O que o método faz? Deve estar claro e com apenas um objetivo definido;
+	- Como ele faz? O método deve esconder seu funcionamento, quando sua regra mudar será necessário mudar apenas um lugar;
+	- Evitar referências indiretar: "fatura.getClient().marcaComoInadimplente();" tornar um método apenas para isso;
+	- Lei de Demeter.
+	
+Liskov Substitutive Principle:
+	- Classes filhas nunca devem ser mais restritas em suas PRÉ-CONDIÇÕES comparadas com a classe pai;
+	- Exemplo: Se temos uma classe onde um determinado valor por variar, seus filhos também devem obedecer essa condição;
+	- Classes filhas nunca devem ser menos restritas em suas PÓS-CONDIÇÕES comparadas com a classe pai;
+	- Exemplo: Se a classe pai retorna um valor entre 0 e 100, a classe filho nunca deve retornar algo além desse "range";
+	- Tentar fazer o uso de Composição.
+	
